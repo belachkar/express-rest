@@ -1,0 +1,22 @@
+{
+  "name": "express_course",
+  "version": "0.0.1",
+  "description": "Express crash course tutorial",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com.belachkar/express.git"
+  },
+  "keywords": [
+    "node.js",
+    "express"
+  ],
+  "author": "Belachkar Ali",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
