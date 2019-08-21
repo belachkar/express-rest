@@ -32,7 +32,8 @@ router.post('/', (req, res) => {
     status: 'active'
   };
   members.push(newMember);
-  res.send({ msg: 'Member registred' });
+  res.redirect('/');
+  // res.send({ msg: 'Member registred' });
 });
 
 // Update Member
