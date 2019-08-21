@@ -9,3 +9,4 @@ Dependecies :
 | express | 4.17.1 |
 | moment | 2.24.0 |
 | uuid | 3.3.3 |
+| express-handlebars | 3.1.0 |
