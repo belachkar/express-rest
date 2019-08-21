@@ -35,4 +35,34 @@ router.post('/', (req, res) => {
   res.send({ msg: 'Member registred' });
 });
 
+// Update Member
+router.put('/:id', (req, res) => {
+  const id = req.params.id;
+  for (let i = 0; i < members.length; i++) {
+    const member = members[i];
+    if ((member.id).toString() === id) {
+      const name = req.body.name ? req.body.name : member.name;
+      const email = req.body.email ? req.body.email : member.email;
+      const status = req.body.status ? req.body.status : member.status;
+      const newMember = { id, name, email, status };
+      members[i] = newMember;
+      return res.json({ msg: 'Member updated successfully.', member });
+    }    
+  }
+  return res.status(400).json({ msg: `No member found with id of ${id}` });  
+});
+
+// Delete member
+router.delete('/:id', (req, res) => {
+  const id = req.params.id;
+  for (let i = 0; i < members.length; i++) {
+    const member = members[i];
+    if ((member.id).toString() === id) {
+      members.splice(i, 1);
+      return res.json({ msg: 'Member deleted successfully.', member });
+    }
+  }
+  return res.status(400).json({ msg: `No member found with id of ${id}` }); 
+});
+
 module.exports = router;
